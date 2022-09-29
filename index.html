@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Konsep Asas Metabolisme Mikrob</title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## STBM3012 Metabolisme mikrob
+Dr Mohd Fareed Mohd Sairi
+	
+fareed@ukm.edu.my
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+**Kuliah 1**
+
+### Konsep asas metabolisme
+</div>
+
+<div class="" style="position: absolute; left: 30%; top: 60%; height: 40%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-end" align="bottom">
+
+<img src="Attachment/sel-metabolism fig.png" width="100%" align="center" ></img>
+
+</div>
+</grid></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Objektif pembelajaran
+
+Mengaitkan konsep metabolisme, bioenegetik, tenaga dengan tindak balas enzim dalam mikrob
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### ulangkaji
+Dalam taksonomi, apakah yang boleh dikaitkan dengan metabolisme mikrob?
+</div>
+
+<aside class="notes"><p>pengkelasan atau pencirian berasaskan ciri metabolisme/fisiologi</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### ulangkaji
+ Pertumbuhan mikrob memerlukan **tenaga**, sumber **karbon** dan **nitrogen**
+(Utama)
+1. apakah sumber utama tenaga, karbon dan nitrogen?
+2. bagaimana bakteria memperoleh sumber tersebut?
+
+**Aktiviti**: nyatakan contoh sumber dan bagaimana bakteria boleh dapatkan sumber tersebut
+</div>
+
+<aside class="notes"><p>kaitkan dengan taksonomi mikrob, pengkelasan bakteria berdasarkan fisiologi. autotroph, heterotroph, photo-chemo, litho-organo. chemolithoheterotoph</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Attachment/pengkelasan bakteria mengikut jenis tenaga.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Perspektif umum metabolisme
+<img src="Attachment/sel-metabolism fig.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Metabolisme
+<div class="" style="display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+**Metabolisme** : proses tindak balas kimia (tapak jalan metabolisme) dalam sel
+
+**Katabolisme** : proses tindak balas kimia yang memecahkan molekul kompleks kepada molekul ringkas untuk penjanaan **tenaga**  
+
+**Anabolisme** : proses tindak balas kimia yang menggabungkan molekul ringkas untuk menghasilkan molekul kompleks
+
+**Kepentingan**: kebolehan organisma/sel untuk mengawal atur penyimpanan dan pelepasan tenaga dalam bentuk ATP untuk pertumbuhan
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Excalidraw/peta minda-metabolisme.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Metabolisme
+- Tapak jalan metabolisme melibatkan aktiviti enzim yang **menyimpan dan membebaskan tenaga** daripada sebatian organik
+- Jenis tapak jalan
+	- linear
+	- bercabang
+	- siklik
+- Ditentukan oleh enzim yang ada dalam mikrob
+</div>
+
+<aside class="notes"><p>linear seperti starch, branch spt pyruvate sebagai precursor untuk oxidatif dan fermentasi, siklik seperti dalam kreb cycle</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Attachment/Pasted image 20220929091307.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Konsep tenaga dan bioenergitik
+- tenaga: unit untuk melakukan aktiviti (joule)
+- bioenergitik/*bioenergitic*: kajian tentang perubahan bentuk tenaga dalam organisma
+	- aka termodinamik biokimia
+	- mengikut hukum termodinamik
+	- berkait dengan tapak jalan dama metabolisme
+</div>
+
+<aside class="notes"><p><a href="https://en.wikipedia.org/wiki/Energy">https://en.wikipedia.org/wiki/Energy</a>, unit untuk melakukan aktiviti, diperoleh melalui cahaya matahari atau penguraian sumber karbon. bioenergetic <a href="https://en.wikipedia.org/wiki/Bioenergetics">https://en.wikipedia.org/wiki/Bioenergetics</a></p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Contoh proses bioenergetik
+<img src="Attachment/catabolism-anabolism comparison.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Tenaga dalam tindak balas metabolisme
+
+<img src="Excalidraw/kandungan tenaga dalam reactant.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Tindak balas berpasangan (*Coupled reaction*)
+Proses katabolisme dan anabolisme berkait antara satu sama lain
+<img src="Attachment/Pasted image 20220928114641.png" alt="" style="object-fit: scale-down">
+
+**Tindak balas spontan atau tidak, ikut hukum termodinamik**
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Hukum termodinamik
+<div class="" style="display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+**Hukum termodinamik 1**
+- tenaga tidak boleh dicipta atau dimusnahkan. 
+- tenaga boleh berubah kepada jenis yang berbeza
+- jumlah tenaga dalam satu sistem kekal
+
+**Hukum termodinamik 2**
+- Proses kimia dan fizik berlaku secara rawak dan sentiasa meningkat dan menuju kepada keseimbangan
+- Entropy (entropi) = darjah kerawakan sesuatu sistem sentiasa berada pada tahap maksimum
+</div>
+
+
+<img src="Attachment/Pasted image 20220926170708.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><p><a href="https://en.wikipedia.org/wiki/Laws_of_thermodynamics">https://en.wikipedia.org/wiki/Laws_of_thermodynamics</a></p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Hukum termodinamik memberi panduan sama ada satu tindak balas berlaku ke kiri atau ke kanan (Gibbs Free energy)
+
+**A+B -> AB @ A+B <- AB**
+
+video: https://www.youtube.com/watch?v=8N1BxHgsoOw
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### **Gibbs Free Energy**
+Jumlah tenaga yang boleh digunakan untuk memulakan aktiviti/tindak balas
+
+<img src="Attachment/Pasted image 20220926175335.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Jenis tindak balas dalam bioenergetik
+<img src="Attachment/Pasted image 20220926175540.png" alt="" style="object-fit: scale-down">
+tindak balas spontan (eksergonik) apabila ΔG<0 atau negatif, menghasilkan tenaga/haba.  ΔG>0 atau positif, tindak balas perlukan tenaga untuk berlaku (endergonik)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Tindak balas redoks
+- Perubahan tenaga (ΔG, gibbs free energy) memerlukan pengaliran elektron
+	- pengoksidaan dan penurunan
+	- pengoksidaan: molekul menderma/hilang elektron dan hidrogen
+		- molekul penderma = agen penurun
+	- penurunan: molekul terima elektron
+		- molekul penerima = agen pengoksida
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Tindak balas redoks
+-***Standard reduction potential, (E'<sub>o</sub>)***: Kecenderungan penderma elektron/ agen penurun menderma elektron
+- Unit E’o dalam millivolt (mV) / volt (V)
+- E’o  < 0 kecenderungan utk menderma elektron adalah tinggi
+- E’o  > 0 kecenderungan utk menerima elektron adalah tinggi.
+- Pemindahan elektron berlaku mengikut kecerunan (potential gradient), dari molekul yang E’o  < 0 ke molekul E’o > 0
+
+<img src="Attachment/Pasted image 20220928161853.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Attachment/Pasted image 20220928162644.png" alt="" style="object-fit: scale-down">
+Semakin besar jarak E’o antara penderma dan penerima electron, semakin besar tenaga yang dibebaskan
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Adenosina trifosfat (ATP)
+- Dalam sel, tenaga disimpan dalam ATP (dalam ikatan kimia)
+- ATP tidak stabil dan tidak disimpan dalam sel (sel simpan molekul yang kaya dengan tenaga)
+- **Bagaimana ATP dihasilkan dalam mikrob?**
+
+<img src="Attachment/Pasted image 20220927144236.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><p>kanji, lemak, glikogen, ATP dihasilkan semasa pemfosfatan substrat dan pemfosfatan oksidatif (electron transport chain (ETC)) di membran</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Attachment/Pasted image 20220927144011.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<iframe width="699" height="393" src="https://www.youtube.com/embed/23ZzI6WZS28" title="What is ATP?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/embed/23ZzI6WZS28
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Faktor yang pengaruhi tindak balas
+- Tindak balas kimia berlaku hanya apabila berlakunya **pelanggaran** antara molekul atau atom
+- Setiap tindak balas memerlukan **tenaga pengaktifan** (*activation energy, Ea*) untuk bermula
+- frekuensi pelanggaran antara molekul mempengaruhi kadar tindak balas
+</div>
+
+<aside class="notes"><p>faktor yang pengaruhi pelanggaran, tenaga, kepekatan subtrat, tekanan</p>
+<img src="Attachment/Pasted image 20220928140621.png" alt="" style="object-fit: scale-down">
+
+</grid></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Tenaga pengaktifan (E<sub>a</sub>)
+- Tenaga yang diperlukan untuk memulakan tindak balas
+- eksergonik dan endergonik perlukan Ea untuk memulakan tindak balas
+
+<img src="Attachment/tenaga pengaktifan.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Soalan
+Bagaimana nak percepatkan tindak balas kimia?
+1. tambah produk
+2. tingkatkan suhu
+3. turunkan suhu
+4. tambah substrat
+5.  kurangkan substrat
+6. Tambah tekanan
+</div>
+
+<aside class="notes"><p>jawapan boleh B, D, F. ketiga-tiga akan tingkatkan kebarangkalian molekul untuk berlanggar antara satu sama lain dan memulakan tindak balas. dalam biologi, adakah menambah suhu sesuai? kesan negatif kepada sel, tidak spesifik. kerana itu, enzim itu penting</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Enzim
+1. protein globul
+2. penamaan diakhiri -ase
+3. menurunkan tenaga pengaktifan dalam tindak balas
+4. spesifik kepada subtrat (tapak aktif)
+5. pengekpressan dan aktiviti boleh dikawal atur
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### tenaga pengaktifan dengan enzim
+
+<img src="Attachment/Pasted image 20220929095430.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Komponen enzim
+<img src="Excalidraw/komponen enzim.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### ulangkaji
+1. Apakah jenis enzim yang ada?
+2. Bagaimana enzim dikelaskan?
+3. Bagaimana enzim dinamakan?
+4. Apakah faktor yang mempengaruhi aktiviti enzim?
+5. Mekanisme tindak balas enzim
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Attachment/Pasted image 20220929134926.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Faktor yang mempengaruhi enzim
+- Suhu
+	- kaitkan dengan collision theory
+	- kaitkan dengan penyahaslian
+- pH
+	- kaitkan dengan tindak balas kimia
+	- kaitkan dengan penyahaslian
+- perencat
+- Kepekatan substrat
+	- kaitkan dengan colision theory
+</div>
+
+<aside class="notes"><p>semak dalam kuliah biokimia. ciri enzim berkait rapat dengan jujukan gen, jenis amino asid, ikatan ionik atau kovalen dalam protein, pengaruh terhadap struktur 3d dan kaitkan dengan tapak aktif- hydrogen bond, covalent bond (disulfide bridges) (more in thermophilic), ionic bond,</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="Attachment/Pasted image 20220929143438.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### bagaimana enzim menurunkan tenaga pengaktifan
+<iframe width="604" height="340" src="https://www.youtube.com/embed/yk14dOOvwMk" title="How Enzymes Work (from PDB-101)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Aktiviti katalisis enzim
+
+<img src="Attachment/Pasted image 20220929142538.png" alt="" style="object-fit: scale-down">
+Empat langkah utama
+</div>
+
+<aside class="notes"><p>subtrat yang spesifik, lokasi tapak aktif</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Mekanisme katalisis enzim
+1. Induced Fit
+2. Proximity & Orientation effects
+3. Electrostatic catalysis
+4. Preferential binding of transition state 
+5. Acid-base catalysis
+6. Covalent catalysis
+7. Metal ion catalysis
+</div>
+
+<aside class="notes"><p>rujuk dalam biokimia. kursus ini akan mengutamakan pengawalaturan dalam sel mikrob</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<aside class="notes"><p>tutorial</p>
+<ul>
+<li>perbincangan berkaitan hukum termodinamik</li>
+<li>bincangkan mekanisme katalisis enzim</li>
+<li>Buat kuiz pada tarikh tertentu konsep asas metabolisme</div></li>
+</ul>
+</aside></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/elapsed-time-bar/elapsed-time-bar.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+	if(isLight(bgColor)){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+		  ElapsedTimeBar
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"center":true,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
